@@ -14,6 +14,7 @@
 
 <script>
   import TodoItem from "./TodoItem";
+
   export default {
     props: ["todos"],
     name: "TodoList",

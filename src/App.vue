@@ -1,13 +1,13 @@
 <template>
-  <v-app>
-    <div id="app">
-      <h1>Todo</h1>
-      <hr />
-      <AddTodo @create-todo="createTodo" />
-      <ProgerssBar />
-      <TodoList class="todo" v-bind:todos="todos" @remove-todo="removeTodo " />
-    </div>
-  </v-app>
+    <v-app>
+        <div id="app">
+            <h1>Todo</h1>
+            <hr/>
+            <AddTodo @create-todo="createTodo"/>
+            <ProgerssBar/>
+            <TodoList class="todo" v-bind:todos="todos" @remove-todo="removeTodo "/>
+        </div>
+    </v-app>
 </template>
 
 <script>
@@ -57,12 +57,12 @@
 
 
 <style>
-  #app {
-    text-align: center;
-    margin-top: 60px;
-  }
+    #app {
+        text-align: center;
+        margin-top: 60px;
+    }
 
-  .todo {
-    margin-top: 50px;
-  }
+    .todo {
+        margin-top: 50px;
+    }
 </style>
