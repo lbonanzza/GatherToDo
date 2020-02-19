@@ -20,7 +20,7 @@
                         <v-card-actions>
                           <v-spacer></v-spacer>
                           <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
-                          <v-btn color="error" text @click="$emit('remove-todo', todo.id)">Agree</v-btn>
+                          <v-btn color="error" text @click="$emit('removeTodo', todo.id)">Agree</v-btn>
                         </v-card-actions>
                       </v-card>
                     </v-dialog>

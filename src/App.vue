@@ -5,7 +5,7 @@
             <hr/>
             <AddTodo @create-todo="createTodo"/>
             <ProgerssBar/>
-            <TodoList class="todo" v-bind:todos="todos" @remove-todo="removeTodo "/>
+            <TodoList class="todo" v-bind:todos="todos" @removeTodo="removeTodo "/>
         </div>
     </v-app>
 </template>

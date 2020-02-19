@@ -6,7 +6,7 @@
               v-for="todo of todos"
               :key="todo.id + 'label'"
               v-bind:todo="todo"
-              @remove-todo="removeTodo"
+              @removeTodo="removeTodo"
       />
     </ul>
   </div>
@@ -24,7 +24,7 @@
     },
     methods: {
       removeTodo(id) {
-        this.$emit("remove-todo", id);
+        this.$emit("removeTodo", id);
       }
     }
   };
