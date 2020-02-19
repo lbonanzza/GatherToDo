@@ -15,6 +15,7 @@
   import AddTodo from "@/components/AddTodo";
   import ProgerssBar from "@/components/ProgressBar";
 
+
   export default {
     name: "App",
 
@@ -57,6 +58,7 @@
 
 
 <style>
+    @import './style.css';
     #app {
         text-align: center;
         margin-top: 60px;

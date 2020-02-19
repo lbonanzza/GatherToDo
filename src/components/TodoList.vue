@@ -1,17 +1,15 @@
 <template>
-    <div class="todoItem">
+  <div class="todoItem">
 
-
-
-        <ul>
-            <TodoItem
-                    v-for="todo of todos"
-                    :key="todo.id + 'label'"
-                    v-bind:todo="todo"
-                    @remove-todo="removeTodo"
-            />
-        </ul>
-    </div>
+    <ul class="todo-list">
+      <TodoItem
+              v-for="todo of todos"
+              :key="todo.id + 'label'"
+              v-bind:todo="todo"
+              @remove-todo="removeTodo"
+      />
+    </ul>
+  </div>
 </template>
 
 
@@ -33,10 +31,14 @@
 </script>
 
 <style scoped>
-    .todoItem {
-        margin-left: auto;
-        margin-right: auto;
+  .todo-list {
+      padding-left: 0;
+  }
 
-        max-width: 500px;
-    }
+  .todoItem {
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 500px;
+  }
 </style>
