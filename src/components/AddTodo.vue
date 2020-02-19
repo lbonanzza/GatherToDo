@@ -1,6 +1,6 @@
 <template>
     <v-container style="max-width: 500px">
-        <v-text-field v-model="title" label="What are you working on??" solo @keydown.enter="create"></v-text-field>
+        <v-text-field v-model="title" label="New task" solo @keydown.enter="create"></v-text-field>
     </v-container>
 </template>
 
