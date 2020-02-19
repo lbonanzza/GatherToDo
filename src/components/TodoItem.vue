@@ -41,9 +41,15 @@
         margin-right: 1rem;
     }
 
-    .done {
-        border: 2px solid;
-        border-color: chartreuse;
+    .done li {
+        border: 3px solid chartreuse;
+    }
+
+    li {
+        display: flex;
+        border: 3px solid #cccccc;
+        padding: 5px;
+        padding-top: 10px;
     }
 
     .checkbox {
