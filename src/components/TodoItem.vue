@@ -1,13 +1,21 @@
 <template>
-    <li>
-        <span v-bind:class="{done: todo.completed}">
-            <input type="checkbox" v-on:change="todo.completed = !todo.completed">
-            <strong>{{todo.id}}</strong>
-            {{todo.title}}
-        </span>
-        <button class="rm">&times;</button>
-    </li>
+    <v-container v-bind:class="{done: todo.completed}">
+
+        <v-card class="mx-auto" max-width="344" outlined :elevation="8">
+            <v-list-item three-line>
+                <v-list-item-content>
+                    <v-list-item-title class="headline mb-1">{{todo.title}}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+
+            <v-card-actions>
+                <v-btn color="green" text @change="todo.completed = !todo.completed">Done</v-btn>
+                <v-btn color="error" text @click="$emit('remove-todo', todo.id)">Delete</v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-container>
 </template>
+
 
 <script>
   export default {
@@ -17,35 +25,37 @@
         required: true
       }
     },
-    name: "TodoItem",
-  }
+    name: "TodoItem"
+  };
 </script>
 
-<style scoped>
-    li {
-        margin-left: auto;
-        margin-right: auto;
-        width: 500px;
-        border: 2px solid #cccccc;
-        border-radius: 12px;
-        display: flex;
-        justify-content: space-between;
-        padding: .5rem 2rem;
-        margin-bottom: 1rem;
-    }
 
-    .rm {
-        background: crimson;
-        color: #ffffff;
-        border-radius: 7px;
-        font-weight: bold;
-    }
+<style scoped>
 
     input {
         margin-right: 1rem;
     }
 
     .done {
-        text-decoration: line-through;
+        border: 2px solid;
+        border-color: chartreuse;
+    }
+
+    .checkbox {
+        padding-right: 500px;
+        height: 20px;
+        align-items: center;
     }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
