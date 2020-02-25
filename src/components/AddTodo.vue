@@ -1,7 +1,7 @@
 <template>
-    <v-container style="max-width: 500px">
-        <v-text-field v-model="title" label="New task" solo @keydown.enter="create"></v-text-field>
-    </v-container>
+  <v-container style="max-width: 500px">
+    <v-text-field v-model="title" label="New task" solo @keydown.enter="create"></v-text-field>
+  </v-container>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
     name: "AddTodo",
     data() {
       return {
-        title: ""
+        title: "",
       };
     },
     methods: {
@@ -18,14 +18,14 @@
           const newTodo = {
             id: Date.now(),
             title: this.title,
-            completed: false
+            completed: false,
           };
 
           this.$emit("create-todo", newTodo);
           this.title = "";
         }
-      }
-    }
+      },
+    },
   };
 </script>
 

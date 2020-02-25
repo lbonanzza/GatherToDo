@@ -1,6 +1,6 @@
 <template>
   <v-container v-bind:class="{done: todo.completed}">
-    <li v-bind:class="{done: todo.completed}">
+    <li>
             <span>
                 <div>
                     <v-checkbox
@@ -9,6 +9,7 @@
                             :label="`${todo.title}`"
                     ></v-checkbox>
                 </div>
+
 
                 <v-row class="del-btn" justify="end">
                     <v-dialog v-model="dialog" persistent max-width="290">
@@ -28,8 +29,6 @@
 
             </span>
     </li>
-
-
   </v-container>
 </template>
 
@@ -39,13 +38,13 @@
     props: {
       todo: {
         type: Object,
-        required: true
-      }
+        required: true,
+      },
     },
     data() {
       return {
         dialog: false,
-      }
+      };
     },
     name: "TodoItem",
   };

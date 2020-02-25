@@ -20,19 +20,19 @@
     props: ["todos"],
     name: "TodoList",
     components: {
-      TodoItem
+      TodoItem,
     },
     methods: {
       removeTodo(id) {
         this.$emit("removeTodo", id);
-      }
-    }
+      },
+    },
   };
 </script>
 
 <style scoped>
   .todo-list {
-      padding-left: 0;
+    padding-left: 0;
   }
 
   .todoItem {
