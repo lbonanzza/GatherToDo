@@ -5,7 +5,6 @@
       <hr/>
       <AddTodo @create-todo="createTodo"/>
       <ProgerssBar :todos="todos"/>
-      <button @sort-todo="sortTodo">Sort</button>
       <TodoList class="todo" :todos="todos" @remove-todo="removeTodo "/>
     </div>
   </v-app>
@@ -46,9 +45,6 @@
       },
       createTodo(todo) {
         this.todos.push(todo);
-      },
-      sortTodo() {
-
       },
     },
     components: {
