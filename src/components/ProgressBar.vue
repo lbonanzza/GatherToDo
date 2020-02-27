@@ -2,7 +2,10 @@
   <v-container class="container">
     <v-progress-linear
             :value="progress"
-            height="20"
+            height="15"
+            background-color="grey"
+            color="green"
+            background-opacity="0.3"
     > {{progress}}
     </v-progress-linear>
   </v-container>
