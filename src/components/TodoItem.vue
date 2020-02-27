@@ -1,37 +1,36 @@
 <template>
-    <v-container v-bind:class="{done: todo.completed}">
-        <li v-bind:class="{done: todo.completed}">
-            <span>
-                <div>
-                    <v-checkbox
-                            class="checkbox"
-                            v-model="checkbox2"
-                            :label="`${todo.title}`"
-                            @change="todo.completed = !todo.completed"
-                    ></v-checkbox>
-                </div>
+  <v-container v-bind:class="{done: todo.completed}">
+    <li>
+      <span>
+        <div>
+          <v-checkbox
+                  class="checkbox"
+                  v-model="todo.completed"
+                  :label="`${todo.title}`"
+          ></v-checkbox>
+        </div>
 
-                <v-row class="del-btn" justify="end">
-                    <v-dialog v-model="dialog" persistent max-width="290">
-                      <template v-slot:activator="{ on }">
-                        <v-btn color="error" v-on="on">Del</v-btn>
-                      </template>
-                      <v-card>
-                        <v-card-title class="headline">Уверены, что хотите удалить задачу?</v-card-title>
-                        <v-card-actions>
-                          <v-spacer></v-spacer>
-                          <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
-                          <v-btn color="error" text @click="$emit('remove-todo', todo.id)">Agree</v-btn>
-                        </v-card-actions>
-                      </v-card>
-                    </v-dialog>
-                </v-row>
+        <v-row class="del-btn" justify="end">
+          <v-dialog v-model="dialog" persistent max-width="290">
+            <template v-slot:activator="{ on }">
+              <v-btn color="error" v-on="on">Del</v-btn>
+            </template>
+            <v-card>
+              <v-card-title class="headline">Уверены, что хотите удалить задачу?</v-card-title>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="green darken-1" text @click="dialog = false">Не удалять</v-btn>
+                <v-btn color="error" text @click="$emit('remove-todo', todo.id)">Удалить</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-row>
 
-            </span>
-        </li>
+      </span>
+    </li>
 
 
-    </v-container>
+  </v-container>
 </template>
 
 
@@ -40,46 +39,46 @@
     props: {
       todo: {
         type: Object,
-        required: true
-      }
+        required: true,
+      },
     },
     data() {
       return {
-        dialog: false
-      }
+        dialog: false,
+      };
     },
-    name: "TodoItem"
+    name: "TodoItem",
   };
 </script>
 
 
 <style scoped>
 
-    input {
-        margin-right: 1rem;
-    }
+  input {
+    margin-right: 1rem;
+  }
 
-    li {
-        display: flex;
-        justify-content: center;
-        border: 3px solid #cccccc;
-        padding: 5px;
-    }
+  li {
+    display: flex;
+    justify-content: center;
+    border: 3px solid #cccccc;
+    padding: 5px;
+  }
 
-    .done li {
-        border: 3px solid chartreuse;
-    }
+  .done li {
+    border: 3px solid chartreuse;
+  }
 
-    .checkbox {
-        padding-top: 50px;
-        padding-right: 50px;
-        height: 20px;
-        align-items: center;
-    }
+  .checkbox {
+    padding-top: 50px;
+    padding-right: 50px;
+    height: 20px;
+    align-items: center;
+  }
 
-    .del-btn {
-        padding-left: 350px;
-    }
+  .del-btn {
+    padding-left: 350px;
+  }
 </style>
 
 

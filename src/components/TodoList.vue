@@ -1,14 +1,14 @@
 <template>
-    <div class="todoItem">
-        <ul>
-            <TodoItem
-                    v-for="todo of todos"
-                    :key="todo.id + 'label'"
-                    v-bind:todo="todo"
-                    @remove-todo="removeTodo"
-            />
-        </ul>
-    </div>
+  <div class="todoItem">
+    <ul>
+      <TodoItem
+              v-for="todo of todos"
+              :key="todo.id + 'label'"
+              v-bind:todo="todo"
+              @remove-todo="removeTodo"
+      />
+    </ul>
+  </div>
 </template>
 
 
@@ -19,21 +19,21 @@
     props: ["todos"],
     name: "TodoList",
     components: {
-      TodoItem
+      TodoItem,
     },
     methods: {
       removeTodo(id) {
         this.$emit("remove-todo", id);
-      }
-    }
+      },
+    },
   };
 </script>
 
 <style scoped>
-    .todoItem {
-        margin-left: auto;
-        margin-right: auto;
+  .todoItem {
+    margin-left: auto;
+    margin-right: auto;
 
-        max-width: 500px;
-    }
+    max-width: 500px;
+  }
 </style>
