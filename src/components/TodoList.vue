@@ -2,10 +2,10 @@
   <div class="todoItem">
     <ul>
       <TodoItem
-              v-for="todo of todos"
-              :key="todo.id + 'label'"
-              v-bind:todo="todo"
-              @remove-todo="removeTodo"
+        v-for="todo of todos"
+        :key="todo.id + 'label'"
+        v-bind:todo="todo"
+        @remove-todo="removeTodo"
       />
     </ul>
   </div>

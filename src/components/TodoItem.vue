@@ -4,9 +4,9 @@
       <span>
         <div>
           <v-checkbox
-                  class="checkbox"
-                  v-model="todo.completed"
-                  :label="`${todo.title}`"
+            class="checkbox"
+            v-model="todo.completed"
+            :label="`${todo.title}`"
           ></v-checkbox>
         </div>
 
