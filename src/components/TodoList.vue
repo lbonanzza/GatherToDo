@@ -1,16 +1,19 @@
 <template>
-    <div class="todoItem">
-        <ul>
-            <TodoItem
-                    v-for="todo of todos"
-                    :key="todo.id + 'label'"
-                    v-bind:todo="todo"
-                    @remove-todo="removeTodo"
-            />
-        </ul>
-    </div>
+  <div class="todoItem">
+    <ul>
+      <v-btn small>
+        <v-icon>mdi-sort-alphabetical-descending</v-icon>
+      </v-btn>
+      <TodoItem
+        v-for="todo of todos"
+        :key="todo.id + 'label'"
+        v-bind:todo="todo"
+        @remove-todo="removeTodo"
+        @sort="sort"
+      />
+    </ul>
+  </div>
 </template>
-
 
 <script>
   import TodoItem from "./TodoItem";
@@ -19,21 +22,25 @@
     props: ["todos"],
     name: "TodoList",
     components: {
-      TodoItem
+      TodoItem,
     },
     methods: {
       removeTodo(id) {
         this.$emit("remove-todo", id);
-      }
-    }
+      },
+      sort() {
+        const str = "Hello";
+        this.$emit("sort", str);
+      },
+    },
   };
 </script>
 
 <style scoped>
-    .todoItem {
-        margin-left: auto;
-        margin-right: auto;
+  .todoItem {
+    margin-left: auto;
+    margin-right: auto;
 
-        max-width: 500px;
-    }
+    max-width: 500px;
+  }
 </style>

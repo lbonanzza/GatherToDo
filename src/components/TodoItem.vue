@@ -1,13 +1,12 @@
 <template>
-    <v-container v-bind:class="{done: todo.completed}">
-        <li v-bind:class="{done: todo.completed}">
+  <v-container v-bind:class="{done: todo.completed}">
+    <li>
             <span>
                 <div>
                     <v-checkbox
-                            class="checkbox"
-                            v-model="checkbox2"
-                            :label="`${todo.title}`"
-                            @change="todo.completed = !todo.completed"
+                      class="checkbox"
+                      v-model="todo.completed"
+                      :label="`${todo.title}`"
                     ></v-checkbox>
                 </div>
 
@@ -28,10 +27,10 @@
                 </v-row>
 
             </span>
-        </li>
+    </li>
 
 
-    </v-container>
+  </v-container>
 </template>
 
 
@@ -40,46 +39,46 @@
     props: {
       todo: {
         type: Object,
-        required: true
-      }
+        required: true,
+      },
     },
     data() {
       return {
-        dialog: false
-      }
+        dialog: false,
+      };
     },
-    name: "TodoItem"
+    name: "TodoItem",
   };
 </script>
 
 
 <style scoped>
 
-    input {
-        margin-right: 1rem;
-    }
+  input {
+    margin-right: 1rem;
+  }
 
-    li {
-        display: flex;
-        justify-content: center;
-        border: 3px solid #cccccc;
-        padding: 5px;
-    }
+  li {
+    display: flex;
+    justify-content: center;
+    border: 3px solid #cccccc;
+    padding: 5px;
+  }
 
-    .done li {
-        border: 3px solid chartreuse;
-    }
+  .done li {
+    border: 3px solid chartreuse;
+  }
 
-    .checkbox {
-        padding-top: 50px;
-        padding-right: 50px;
-        height: 20px;
-        align-items: center;
-    }
+  .checkbox {
+    padding-top: 50px;
+    padding-right: 50px;
+    height: 20px;
+    align-items: center;
+  }
 
-    .del-btn {
-        padding-left: 350px;
-    }
+  .del-btn {
+    padding-left: 350px;
+  }
 </style>
 
 
