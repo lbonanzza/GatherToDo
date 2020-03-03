@@ -13,9 +13,9 @@
         <v-row class="del-btn" justify="end">
           <v-dialog v-model="dialog" persistent max-width="290">
             <template v-slot:activator="{ on }">
-              <v-bt color="error" icon="true" v-on="on">
+              <v-btn color="error" icon="true" v-on="on">
                 <v-icon>mdi-delete</v-icon>
-              </v-bt>
+              </v-btn>
             </template>
             <v-card>
               <v-card-title class="headline">Уверены, что хотите удалить задачу?</v-card-title>
