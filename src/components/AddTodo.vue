@@ -1,5 +1,6 @@
 <template>
-  <v-container style="max-width: 500px">
+
+  <v-container style="max-width: 500px" class="text-field">
     <v-text-field v-model="title" label="New task" solo @keydown.enter="create"></v-text-field>
   </v-container>
 </template>
@@ -29,5 +30,10 @@
   };
 </script>
 
-
+<style>
+  .text-field {
+    margin-top: 100px;
+    margin-bottom: -10px;
+  }
+</style>
  

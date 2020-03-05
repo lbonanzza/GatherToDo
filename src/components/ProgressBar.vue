@@ -1,11 +1,11 @@
 <template>
   <v-container class="container">
     <v-progress-linear
-      :value="progress"
-      height="15"
-      background-color="grey"
-      color="green"
-      background-opacity="0.3"
+        :value="progress"
+        height="15"
+        background-color="grey"
+        color="green"
+        background-opacity="0.3"
     > {{progress}}
     </v-progress-linear>
   </v-container>
@@ -14,7 +14,7 @@
 
 <script>
   export default {
-    props: ['todos'],
+    props: ["todos"],
     data() {
       return {};
     },

@@ -1,11 +1,11 @@
 <template>
   <div class="todoItem">
-    <ul>
+    <ul class="list">
       <TodoItem
-        v-for="todo of todos"
-        :key="todo.id + 'label'"
-        v-bind:todo="todo"
-        @remove-todo="removeTodo"
+          v-for="todo of todos"
+          :key="todo.id + 'label'"
+          v-bind:todo="todo"
+          @remove-todo="removeTodo"
       />
     </ul>
   </div>
@@ -26,8 +26,8 @@
         this.$emit("remove-todo", id);
       },
       sort() {
-        const arrSort = this.todos.sort()
-        return arrSort
+        const arrSort = this.todos.sort();
+        return arrSort;
       },
     },
   };
@@ -39,5 +39,9 @@
     margin-right: auto;
 
     max-width: 500px;
+  }
+
+  .list {
+    padding-left: 0;
   }
 </style>

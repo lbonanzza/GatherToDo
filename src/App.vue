@@ -1,8 +1,7 @@
 <template>
   <v-app>
     <div id="app">
-      <h1>Todo</h1>
-      <hr/>
+      <Header/>
       <AddTodo @create-todo="createTodo"/>
       <ProgerssBar :todos="todos"/>
       <TodoList class="todo" :todos="todos" @remove-todo="removeTodo "/>
@@ -14,6 +13,7 @@
   import TodoList from "@/components/TodoList";
   import AddTodo from "@/components/AddTodo";
   import ProgerssBar from "@/components/ProgressBar";
+  import Header from "@/components/Header";
 
   export default {
     name: "App",
@@ -51,18 +51,14 @@
       TodoList,
       AddTodo,
       ProgerssBar,
+      Header,
     },
   };
 </script>
 
 
 <style>
-  #app {
-    text-align: center;
-    margin-top: 60px;
-  }
-
   .todo {
-    margin-top: 50px;
+    margin-top: 30px;
   }
 </style>
