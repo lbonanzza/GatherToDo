@@ -25,10 +25,6 @@
       removeTodo(id) {
         this.$emit("remove-todo", id);
       },
-      sort() {
-        const arrSort = this.todos.sort();
-        return arrSort;
-      },
     },
   };
 </script>

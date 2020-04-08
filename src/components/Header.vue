@@ -1,11 +1,27 @@
 <template>
-  <div class="header">
-    <div class="header__inner">
-      <div class="header-logo">
-        <h1>Gather To Do</h1>
-      </div>
-    </div>
+
+  <div>
+    <v-app-bar
+        color="gray"
+        dense
+        dark
+    >
+
+      <v-toolbar-title>Gather To Do</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-login-variant</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+    </v-app-bar>
   </div>
+
 </template>
 
 <script>
@@ -13,25 +29,3 @@
     name: "Header",
   };
 </script>
-
-<style scoped>
-  .header {
-    width: 100%;
-    height: 100px;
-    background-color: darkslateblue;
-
-    position: absolute;
-    left: 0;
-    z-index: 10;
-  }
-
-  .header__inner {
-    display: flex;
-    align-items: center;
-    padding: 30px 10px;
-  }
-
-  .header-logo {
-    color: #ffffff;
-  }
-</style>
